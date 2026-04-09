@@ -552,7 +552,7 @@ function buildBracket(){
   });
   const note=document.createElement('div');
   note.style.cssText='background:#fff;border-radius:12px;padding:.85rem 1.25rem;box-shadow:var(--shadow);font-size:.83rem;color:var(--muted);margin-top:.5rem;';
-  note.innerHTML='<strong style="color:var(--text)">Obs:</strong> Finalen tippas inte här — inga poäng för lag i final. Tippa VM-vinnaren under <strong>Bonus</strong> istället.';
+  note.innerHTML='<strong style="color:var(--text)">Obs:</strong> Finalen tippas inte här — och du behöver inte heller klicka i vinnare i semifinalerna då detta inte ger poäng. Tippa VM-vinnaren under <strong>Bonus</strong> istället.';
   container.appendChild(note);
 }
 function pickBracket(key,mi,side){S.bracket[key][mi]=side;buildBracket();updateScore();}
