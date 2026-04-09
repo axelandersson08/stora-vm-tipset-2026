@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axels Stora VM-Tips 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#00843D;--green-dark:#005c2a;--green-light:#e6f4ec;--gold:#C9A84C;--bg:#f4f4f0;--text:#1a1a1a;--muted:#6b6b6b;--border:#e0e0e0;--shadow:0 2px 12px rgba(0,0,0,0.07);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+header{background:var(--green-dark);position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.3);}
+.hi{max-width:980px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;gap:1rem;height:54px;}
+.ht{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;color:var(--gold);}
+.hs{font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;}
+.tab-bar{background:#fff;border-bottom:1.5px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:54px;z-index:99;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab{padding:.65rem 1rem;font-size:.77rem;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2.5px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s;text-transform:uppercase;user-select:none;}
+.tab:hover{color:var(--green);}
+.tab.active{color:var(--green);border-bottom-color:var(--green);}
+.tab.locked{opacity:.4;cursor:not-allowed;}
+main{max-width:980px;margin:0 auto;padding:1.25rem 1.25rem 5rem;}
+.page{display:none;}.page.active{display:block;}
+.st{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--green-dark);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;}
+.st::after{content:'';flex:1;height:1.5px;background:var(--border);margin-left:.5rem;}
+.sc{background:var(--green-dark);border-radius:16px;padding:2rem 1.75rem;color:#fff;margin-bottom:1.25rem;position:relative;overflow:hidden;}
+.sc::before{content:'⚽';position:absolute;right:-10px;top:-10px;font-size:7rem;opacity:.06;line-height:1;}
+.sc h1{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;letter-spacing:3px;color:var(--gold);line-height:1.05;margin-bottom:.4rem;}
+.sc p{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.6;}
+.card{background:#fff;border-radius:12px;padding:1.25rem;box-shadow:var(--shadow);margin-bottom:1.25rem;}
+.card label{display:block;font-size:.77rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem;}
+.card input[type=text],.card input[type=password]{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:'DM Sans',sans-serif;outline:none;}
+.card input:focus{border-color:var(--green);}
+.card h3{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--green-dark);margin-bottom:.8rem;}
+.rr{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid var(--border);font-size:.85rem;}
+.rr:last-child{border-bottom:none;}
+.rp{font-family:'Bebas Neue',sans-serif;font-size:.92rem;color:var(--gold);letter-spacing:1px;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;border-radius:8px;font-size:.9rem;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;transition:transform .1s;}
+.btn:active{transform:scale(.97);}
+.bp{background:var(--green);color:#fff;width:100%;justify-content:center;font-size:.95rem;padding:.85rem;}
+.bp:hover{background:var(--green-dark);}
+.bo{background:#fff;color:var(--green-dark);border:1.5px solid var(--green-dark);flex:1;justify-content:center;}
+.bo:hover{background:var(--green-light);}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.85rem;}
+.gc{background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden;}
+.gh{background:var(--green-dark);color:#fff;padding:.5rem .85rem;display:flex;justify-content:space-between;align-items:center;}
+.gn{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1.5px;}
+.dbl{font-size:.62rem;background:var(--gold);color:#1a1a1a;padding:2px 7px;border-radius:4px;font-weight:600;cursor:pointer;user-select:none;}
+.dbl.used{background:#3d8f5a;color:#fff;}
+.mr{display:grid;grid-template-columns:1fr auto auto auto;align-items:center;padding:.46rem .8rem;border-bottom:1px solid var(--border);gap:.3rem;}
+.mn{font-size:.79rem;line-height:1.2;}
+.ob{padding:.2rem .4rem;border-radius:5px;border:1.5px solid var(--border);background:#fff;font-size:.72rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;color:var(--muted);transition:all .1s;min-width:30px;text-align:center;}
+.ob:hover{border-color:var(--green);color:var(--green);}
+.ob.sel{background:var(--green);border-color:var(--green);color:#fff;}
+.ob.dbl2{background:var(--gold);border-color:var(--gold);color:#1a1a1a;font-weight:700;}
+.shdr{background:#f8f8f5;padding:.28rem .8rem;font-size:.65rem;font-weight:600;text-transform:uppercase;color:var(--muted);display:grid;grid-template-columns:1.3rem 1fr auto auto;gap:2px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.srow{padding:.24rem .8rem;font-size:.76rem;display:grid;grid-template-columns:1.3rem 1fr auto auto;align-items:center;gap:2px;}
+.srow.draggable{cursor:grab;}
+.srow.drag-over{background:rgba(0,132,61,.15)!important;}
+.srow.dragging{opacity:.35;}
+.srow.p1{background:rgba(0,132,61,.07);}
+.srow.p2{background:rgba(0,132,61,.04);}
+.srow.p3{background:rgba(201,168,76,.06);}
+.pb{width:17px;height:17px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:600;}
+.pb.w{background:var(--green);color:#fff;}
+.pb.r{background:#3d8f5a;color:#fff;}
+.pb.t{background:var(--gold);color:#1a1a1a;}
+.pb.f{background:var(--border);color:var(--muted);}
+.cr{text-align:right;min-width:22px;}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:.65rem;}
+.tc{background:#fff;border-radius:10px;box-shadow:var(--shadow);padding:.72rem .95rem;display:flex;align-items:center;gap:.65rem;cursor:pointer;border:2px solid transparent;transition:border-color .15s,background .15s;user-select:none;}
+.tc.sel{border-color:var(--green);background:var(--green-light);}
+.tcg{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1px;color:var(--green-dark);min-width:18px;}
+.tct{font-size:.82rem;font-weight:500;flex:1;}
+.tcn{font-size:.68rem;color:var(--muted);}
+.bi{background:#fff;border-radius:12px;padding:.9rem 1.25rem;box-shadow:var(--shadow);margin-bottom:1.25rem;font-size:.85rem;color:var(--muted);line-height:1.6;}
+.brd{margin-bottom:1.5rem;}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:.6rem;}
+.mc{background:#fff;border-radius:10px;box-shadow:var(--shadow);overflow:hidden;}
+.mch{background:#f2f2ef;padding:.26rem .7rem;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+.mct{padding:.36rem .7rem;font-size:.8rem;display:flex;align-items:center;gap:.4rem;border-bottom:1px solid var(--border);}
+.mct:last-child{border-bottom:none;}
+.tnm{flex:1;font-size:.79rem;}
+.pkb{font-size:.67rem;padding:.1rem .42rem;border-radius:4px;border:1.5px solid var(--border);background:#fff;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .1s;margin-left:auto;white-space:nowrap;}
+.pkb.sel{background:var(--green);border-color:var(--green);color:#fff;font-weight:600;}
+.bog{display:grid;gap:.85rem;}
+.boc{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:1rem 1.25rem;}
+.boc label{display:block;font-size:.76rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem;}
+.bopl{font-family:'Bebas Neue',sans-serif;font-size:.84rem;color:var(--gold);letter-spacing:.5px;margin-bottom:.45rem;}
+.boi{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:.55rem .85rem;font-size:.92rem;font-family:'DM Sans',sans-serif;outline:none;}
+.boi:focus{border-color:var(--gold);}
+.smh{background:var(--green-dark);border-radius:16px;padding:1.5rem 2rem;color:#fff;margin-bottom:1.25rem;text-align:center;}
+.smh h2{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:2px;color:rgba(255,255,255,.5);margin-bottom:.1rem;}
+.smn{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:var(--gold);line-height:1;}
+.smt{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:2px;color:#fff;line-height:1;margin:.3rem 0 .05rem;}
+.smpl{font-size:.77rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;}
+.sms{background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:.85rem;}
+.smsh{background:var(--green-light);padding:.5rem 1rem;font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--green-dark);display:flex;justify-content:space-between;}
+.smr{display:flex;justify-content:space-between;align-items:center;padding:.48rem 1rem;border-bottom:1px solid var(--border);font-size:.83rem;}
+.smr:last-child{border-bottom:none;}
+.smp{font-family:'Bebas Neue',sans-serif;font-size:.93rem;color:var(--green);letter-spacing:.5px;}
+.eb{display:flex;gap:.65rem;margin-top:1.25rem;flex-wrap:wrap;}
+.pbw{background:rgba(255,255,255,.12);border-radius:4px;height:4px;margin-top:.42rem;overflow:hidden;}
+.pbf{height:100%;background:var(--gold);border-radius:4px;transition:width .4s;}
+.admin-card{background:#fff;border-radius:12px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:.8rem;}
+.admin-hdr{background:var(--green-dark);color:#fff;padding:.55rem 1rem;display:flex;align-items:center;gap:.75rem;}
+.admin-nm{font-size:.86rem;font-weight:500;flex:1;}
+.admin-ts{font-size:.68rem;color:rgba(255,255,255,.45);}
+.admin-tog{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:.73rem;font-family:'DM Sans',sans-serif;}
+.admin-body{padding:.75rem 1rem;display:none;font-size:.82rem;color:var(--muted);}
+.admin-body.open{display:block;}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--green-dark);color:#fff;padding:.62rem 1.35rem;border-radius:8px;font-size:.83rem;font-weight:500;z-index:999;transition:transform .3s;box-shadow:0 4px 20px rgba(0,0,0,.2);pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.snav{display:flex;justify-content:flex-end;margin-top:1.25rem;}
+.bn{background:var(--green);color:#fff;padding:.65rem 1.5rem;border-radius:8px;font-size:.87rem;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;}
+.bn:hover{background:var(--green-dark);}
+@media(max-width:580px){.gg{grid-template-columns:1fr;}.tg{grid-template-columns:1fr 1fr;}.mn{font-size:.72rem;}.ob{min-width:26px;font-size:.67rem;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div><div class="ht">Axels Stora VM-Tips 2026</div><div class="hs">FIFA World Cup</div></div>
+    <div style="flex:1"></div>
+    <div id="hsc" style="display:none;font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--gold);letter-spacing:1px">0 P</div>
+  </div>
+</header>
+<div class="tab-bar" id="tabBar" style="display:none">
+  <div class="tab active" data-page="groups" onclick="navTab('groups',this)">Gruppspel</div>
+  <div class="tab locked" data-page="thirds" onclick="navTab('thirds',this)">Grupp-3:or</div>
+  <div class="tab locked" data-page="bracket" onclick="navTab('bracket',this)">Slutspel</div>
+  <div class="tab" data-page="bonus" onclick="navTab('bonus',this)">Bonus</div>
+  <div class="tab" data-page="summary" onclick="navTab('summary',this)">Summering</div>
+  <div class="tab" data-page="admin" onclick="navTab('admin',this)">Admin</div>
+</div>
+<main>
+
+<div class="page active" id="page-start">
+  <div class="sc">
+    <h1>Axels Stora<br>VM-Tips 2026</h1>
+    <p style="margin-top:.6rem">Tippa alla 72 gruppspelsmatcher, välj dina 8 grupp-3:or och se slutspelsträdet byggas automatiskt.</p>
+  </div>
+  <div class="card">
+    <label>Ditt namn</label>
+    <input type="text" id="pName" placeholder="ex. Axel Andersson" autocomplete="name">
+  </div>
+  <div id="preloadBox" style="display:none" class="card">
+    <div style="font-size:.77rem;font-weight:600;color:var(--green-dark);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem">Sparat tips hittades</div>
+    <div id="preloadMsg" style="font-size:.83rem;color:var(--muted);margin-bottom:.75rem"></div>
+    <button class="btn bp" onclick="loadSaved()">Öppna sparat tips</button>
+  </div>
+  <div class="card">
+    <h3>Poängregler</h3>
+    <div class="rr"><span>Gruppspelsmatch — rätt utfall</span><span class="rp">Odds-p</span></div>
+    <div class="rr"><span>Dubbelchans (1 per grupp)</span><span class="rp">× 2</span></div>
+    <div class="rr"><span>Lag i 16-delsfinal</span><span class="rp">12 P</span></div>
+    <div class="rr"><span>Lag i åttondelsfinal</span><span class="rp">24 P</span></div>
+    <div class="rr"><span>Lag i kvartsfinal</span><span class="rp">36 P</span></div>
+    <div class="rr"><span>Lag i semifinal</span><span class="rp">60 P</span></div>
+    <div class="rr"><span>Brons / Silver / VM-vinnare</span><span class="rp">50 / 80 / 100 P</span></div>
+    <div class="rr"><span>Skyttekung / Assistkung / Golden Ball</span><span class="rp">80 P var.</span></div>
+  </div>
+  <button class="btn bp" onclick="startTipping()">Starta tipset →</button>
+</div>
+
+<div class="page" id="page-groups">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem">
+    <div class="st" style="margin:0;flex:1">Gruppspel</div>
+    <span id="gProg" style="font-size:.77rem;color:var(--muted);margin-left:1rem;white-space:nowrap"></span>
+  </div>
+  <div class="gg" id="groupGrid"></div>
+  <div class="snav"><button class="bn" onclick="goToThirds()">Välj grupp-3:or →</button></div>
+</div>
+
+<div class="page" id="page-thirds">
+  <div class="st">Välj 8 av 12 grupp-3:or</div>
+  <div class="bi">Baserat på ditt gruppspelstips visas alla 12 tippade grupptreor. <strong>Välj de 8 lag du tror går vidare</strong> — precis som FIFA väljer bästa 8 av 12. Slutspelsträdet byggs sedan automatiskt.</div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+    <span style="font-size:.85rem;color:var(--muted)">Valda:</span>
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--green);letter-spacing:1px" id="tcNum">0</span>
+    <span style="font-size:.85rem;color:var(--muted)">/ 8</span>
+  </div>
+  <div class="tg" id="thirdGrid"></div>
+  <div class="snav" style="margin-top:1.25rem"><button class="bn" onclick="goToBracket()">Se slutspelsträdet →</button></div>
+</div>
+
+<div class="page" id="page-bracket">
+  <div class="bi">Slutspelsträdet är byggt automatiskt. Du tippar <strong>vilket lag som går vidare</strong> i varje match — poäng ges för rätt lag per runda, oavsett hur de tar sig dit. Finalen tippas inte (inga poäng för lag i final — tippa VM-vinnaren under Bonus istället).</div>
+  <div id="bracketContent"></div>
+</div>
+
+<div class="page" id="page-bonus">
+  <div class="st">Bonusfrågor</div>
+  <div class="bog">
+    <div class="boc"><label>VM-vinnare</label><div class="bopl">100 poäng</div><input class="boi" id="bWinner" type="text" placeholder="Vilket land vinner VM?" oninput="updateScore()"></div>
+    <div class="boc"><label>Silvermedaljör</label><div class="bopl">80 poäng</div><input class="boi" id="bSilver" type="text" placeholder="Vilket land är tvåa?" oninput="updateScore()"></div>
+    <div class="boc"><label>Bronsmedaljör</label><div class="bopl">50 poäng</div><input class="boi" id="bBronze" type="text" placeholder="Vilket land är trea?" oninput="updateScore()"></div>
+    <div class="boc"><label>Skyttekung</label><div class="bopl">80 poäng</div><input class="boi" id="bScorer" type="text" placeholder="Vem gör flest mål?" oninput="updateScore()"></div>
+    <div class="boc"><label>Assistkung</label><div class="bopl">80 poäng</div><input class="boi" id="bAssist" type="text" placeholder="Vem gör flest assist?" oninput="updateScore()"></div>
+    <div class="boc"><label>Turneringens spelare / Golden Ball</label><div class="bopl">80 poäng</div><input class="boi" id="bBall" type="text" placeholder="Vem vinner Golden Ball?" oninput="updateScore()"></div>
+  </div>
+</div>
+
+<div class="page" id="page-summary">
+  <div class="smh">
+    <h2>TIPS AV</h2>
+    <div class="smn" id="smName">—</div>
+    <div class="smt" id="smTotal">0</div>
+    <div class="smpl">möjliga poäng tippade</div>
+    <div class="pbw"><div class="pbf" id="smProg" style="width:0%"></div></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.33);margin-top:.3rem" id="smProgLbl"></div>
+  </div>
+  <div id="smGroups" class="sms"></div>
+  <div id="smKO" class="sms"></div>
+  <div id="smBonus" class="sms"></div>
+  <div class="eb">
+    <button class="btn bo" onclick="copyLink()">Kopiera länk</button>
+    <button class="btn bp" onclick="submitTips()" style="flex:2">Skicka in tips →</button>
+  </div>
+  <div id="shareNote" style="margin-top:.65rem;font-size:.76rem;color:var(--muted);text-align:center;display:none">
+    Länken innehåller hela ditt tips och skickas med i mailet. Axel kan öppna det direkt.
+  </div>
+</div>
+
+<div class="page" id="page-admin">
+  <div class="st">Admin — Alla inlämnade tips</div>
+  <div class="card" style="display:flex;gap:.75rem;align-items:center;padding:.9rem 1.25rem">
+    <input type="password" id="adminPw" placeholder="Lösenord" style="flex:1">
+    <button class="btn bp" style="width:auto;padding:.55rem 1.2rem" onclick="loadAdmin()">Visa tips</button>
+  </div>
+  <div id="adminContent"></div>
+</div>
+
+</main>
+<div class="toast" id="toast"></div>
+<script>
+const GROUPS=[
+  {name:'A',teams:['Mexiko','Sydafrika','Sydkorea','Tjeckien'],matches:[
+    {h:'Mexiko',a:'Sydafrika',o1:15,oX:41,o2:56},{h:'Sydkorea',a:'Tjeckien',o1:27,oX:31,o2:27},
+    {h:'Tjeckien',a:'Sydafrika',o1:19,oX:34,o2:42},{h:'Mexiko',a:'Sydkorea',o1:22,oX:33,o2:32},
+    {h:'Tjeckien',a:'Mexiko',o1:27,oX:31,o2:26},{h:'Sydafrika',a:'Sydkorea',o1:38,oX:34,o2:20}]},
+  {name:'B',teams:['Kanada','Bosnien och Hercegovina','Qatar','Schweiz'],matches:[
+    {h:'Kanada',a:'Bosnien och Hercegovina',o1:22,oX:33,o2:32},{h:'Qatar',a:'Schweiz',o1:68,oX:46,o2:14},
+    {h:'Schweiz',a:'Bosnien och Hercegovina',o1:18,oX:35,o2:45},{h:'Kanada',a:'Qatar',o1:21,oX:33,o2:34},
+    {h:'Schweiz',a:'Kanada',o1:22,oX:32,o2:32},{h:'Bosnien och Hercegovina',a:'Qatar',o1:21,oX:33,o2:36}]},
+  {name:'C',teams:['Brasilien','Marocko','Haiti','Skottland'],matches:[
+    {h:'Brasilien',a:'Marocko',o1:15,oX:43,o2:61},{h:'Haiti',a:'Skottland',o1:64,oX:48,o2:14},
+    {h:'Skottland',a:'Marocko',o1:30,oX:31,o2:23},{h:'Brasilien',a:'Haiti',o1:11,oX:75,o2:150},
+    {h:'Skottland',a:'Brasilien',o1:70,oX:42,o2:15},{h:'Marocko',a:'Haiti',o1:14,oX:44,o2:75}]},
+  {name:'D',teams:['USA','Paraguay','Australien','Turkiet'],matches:[
+    {h:'USA',a:'Paraguay',o1:22,oX:33,o2:30},{h:'Australien',a:'Turkiet',o1:48,oX:36,o2:17},
+    {h:'Turkiet',a:'Paraguay',o1:24,oX:31,o2:29},{h:'USA',a:'Australien',o1:20,oX:33,o2:37},
+    {h:'Turkiet',a:'USA',o1:26,oX:31,o2:27},{h:'Paraguay',a:'Australien',o1:24,oX:31,o2:29}]},
+  {name:'E',teams:['Tyskland','Curaçao','Elfenbenskusten','Ecuador'],matches:[
+    {h:'Tyskland',a:'Curaçao',o1:10,oX:250,o2:340},{h:'Elfenbenskusten',a:'Ecuador',o1:31,oX:33,o2:21},
+    {h:'Tyskland',a:'Elfenbenskusten',o1:17,oX:36,o2:48},{h:'Ecuador',a:'Curaçao',o1:17,oX:37,o2:50},
+    {h:'Curaçao',a:'Elfenbenskusten',o1:55,oX:36,o2:15},{h:'Ecuador',a:'Tyskland',o1:50,oX:38,o2:17}]},
+  {name:'F',teams:['Nederländerna','Japan','Sverige','Tunisien'],matches:[
+    {h:'Nederländerna',a:'Japan',o1:18,oX:35,o2:41},{h:'Sverige',a:'Tunisien',o1:19,oX:33,o2:43},
+    {h:'Nederländerna',a:'Sverige',o1:19,oX:35,o2:42},{h:'Tunisien',a:'Japan',o1:35,oX:32,o2:21},
+    {h:'Japan',a:'Sverige',o1:26,oX:31,o2:27},{h:'Tunisien',a:'Nederländerna',o1:65,oX:40,o2:15}]},
+  {name:'G',teams:['Iran','Nya Zeeland','Belgien','Egypten'],matches:[
+    {h:'Iran',a:'Nya Zeeland',o1:16,oX:39,o2:51},{h:'Belgien',a:'Egypten',o1:16,oX:39,o2:50},
+    {h:'Belgien',a:'Iran',o1:16,oX:38,o2:55},{h:'Nya Zeeland',a:'Egypten',o1:55,oX:39,o2:16},
+    {h:'Egypten',a:'Iran',o1:42,oX:34,o2:19},{h:'Nya Zeeland',a:'Belgien',o1:130,oX:70,o2:11}]},
+  {name:'H',teams:['Spanien','Kap Verde','Saudiarabien','Uruguay'],matches:[
+    {h:'Spanien',a:'Kap Verde',o1:11,oX:100,o2:190},{h:'Saudiarabien',a:'Uruguay',o1:65,oX:45,o2:14},
+    {h:'Spanien',a:'Saudiarabien',o1:14,oX:48,o2:85},{h:'Uruguay',a:'Kap Verde',o1:16,oX:37,o2:52},
+    {h:'Kap Verde',a:'Saudiarabien',o1:23,oX:32,o2:29},{h:'Uruguay',a:'Spanien',o1:37,oX:33,o2:20}]},
+  {name:'I',teams:['Frankrike','Senegal','Irak','Norge'],matches:[
+    {h:'Frankrike',a:'Senegal',o1:14,oX:45,o2:70},{h:'Irak',a:'Norge',o1:75,oX:47,o2:14},
+    {h:'Frankrike',a:'Irak',o1:12,oX:65,o2:130},{h:'Norge',a:'Senegal',o1:29,oX:32,o2:24},
+    {h:'Norge',a:'Frankrike',o1:48,oX:37,o2:17},{h:'Senegal',a:'Irak',o1:14,oX:45,o2:80}]},
+  {name:'J',teams:['Argentina','Algeriet','Österrike','Jordanien'],matches:[
+    {h:'Argentina',a:'Algeriet',o1:13,oX:51,o2:90},{h:'Österrike',a:'Jordanien',o1:13,oX:52,o2:68},
+    {h:'Argentina',a:'Österrike',o1:18,oX:36,o2:45},{h:'Jordanien',a:'Algeriet',o1:50,oX:38,o2:16},
+    {h:'Algeriet',a:'Österrike',o1:29,oX:32,o2:23},{h:'Jordanien',a:'Argentina',o1:150,oX:75,o2:11}]},
+  {name:'K',teams:['Portugal','Kongo-Kinshasa','Uzbekistan','Colombia'],matches:[
+    {h:'Portugal',a:'Kongo-Kinshasa',o1:13,oX:46,o2:90},{h:'Uzbekistan',a:'Colombia',o1:75,oX:48,o2:14},
+    {h:'Portugal',a:'Uzbekistan',o1:12,oX:60,o2:120},{h:'Colombia',a:'Kongo-Kinshasa',o1:18,oX:35,o2:45},
+    {h:'Colombia',a:'Portugal',o1:40,oX:34,o2:19},{h:'Kongo-Kinshasa',a:'Uzbekistan',o1:21,oX:33,o2:34}]},
+  {name:'L',teams:['England','Kroatien','Ghana','Panama'],matches:[
+    {h:'England',a:'Kroatien',o1:16,oX:40,o2:53},{h:'Ghana',a:'Panama',o1:18,oX:35,o2:43},
+    {h:'England',a:'Ghana',o1:16,oX:39,o2:58},{h:'Panama',a:'Kroatien',o1:65,oX:40,o2:15},
+    {h:'Panama',a:'England',o1:130,oX:65,o2:12},{h:'Kroatien',a:'Ghana',o1:22,oX:32,o2:32}]}
+];
+const R32=[
+  {a:{t:'r',g:'A'},b:{t:'r',g:'B'}},
+  {a:{t:'w',g:'E'},b:{t:'3',gs:['A','B','C','D','F']}},
+  {a:{t:'w',g:'F'},b:{t:'r',g:'C'}},
+  {a:{t:'w',g:'C'},b:{t:'r',g:'F'}},
+  {a:{t:'w',g:'I'},b:{t:'3',gs:['C','D','F','G','H']}},
+  {a:{t:'r',g:'E'},b:{t:'r',g:'I'}},
+  {a:{t:'w',g:'A'},b:{t:'3',gs:['C','E','F','H','I']}},
+  {a:{t:'w',g:'L'},b:{t:'3',gs:['E','H','I','J','K']}},
+  {a:{t:'w',g:'D'},b:{t:'3',gs:['B','E','F','I','J']}},
+  {a:{t:'w',g:'G'},b:{t:'3',gs:['A','E','H','I','J']}},
+  {a:{t:'r',g:'K'},b:{t:'r',g:'L'}},
+  {a:{t:'w',g:'H'},b:{t:'r',g:'J'}},
+  {a:{t:'w',g:'B'},b:{t:'3',gs:['E','F','G','I','J']}},
+  {a:{t:'w',g:'J'},b:{t:'r',g:'H'}},
+  {a:{t:'w',g:'K'},b:{t:'3',gs:['D','E','I','J','L']}},
+  {a:{t:'r',g:'D'},b:{t:'r',g:'G'}},
+];
+const ADMIN_PW='axel2026';
+let S={name:'',groups:{},thirds:[],bracket:{r32:Array(16).fill(null),r16:Array(8).fill(null),qf:Array(4).fill(null),sf:Array(2).fill(null)}};
+let dblPending=null,thirdAssign={};
+
+// URL encode/decode
+function encState(){
+  const b={winner:gv('bWinner'),silver:gv('bSilver'),bronze:gv('bBronze'),scorer:gv('bScorer'),assist:gv('bAssist'),ball:gv('bBall')};
+  try{return btoa(unescape(encodeURIComponent(JSON.stringify({...S,bonus:b}))));}catch(e){return '';}
+}
+function decState(s){try{return JSON.parse(decodeURIComponent(escape(atob(s))));}catch(e){return null;}}
+function getShareURL(){return location.href.split('?')[0]+'?tips='+encState();}
+function gv(id){return document.getElementById(id)?.value||'';}
+function sv(id,v){const el=document.getElementById(id);if(el)el.value=v||'';}
+
+// Storage helpers (shared artifact storage)
+async function saveTips(){
+  const key='tips:'+S.name.toLowerCase().replace(/\s+/g,'_');
+  const b={winner:gv('bWinner'),silver:gv('bSilver'),bronze:gv('bBronze'),scorer:gv('bScorer'),assist:gv('bAssist'),ball:gv('bBall')};
+  try{await window.storage.set(key,JSON.stringify({...S,bonus:b,ts:Date.now()}),true);}catch(e){}
+}
+async function loadAllTips(){
+  try{
+    const keys=await window.storage.list('tips:',true);
+    const all=[];
+    for(const k of(keys?.keys||[])){
+      try{const r=await window.storage.get(k,true);if(r?.value)all.push(JSON.parse(r.value));}catch(e){}
+    }
+    return all;
+  }catch(e){return [];}
+}
+
+// Check URL on load
+window.addEventListener('load',()=>{
+  const p=new URLSearchParams(location.search).get('tips');
+  if(!p)return;
+  const d=decState(p);
+  if(!d||!d.name)return;
+  S=d;
+  document.getElementById('pName').value=d.name;
+  if(d.bonus){sv('bWinner',d.bonus.winner);sv('bSilver',d.bonus.silver);sv('bBronze',d.bonus.bronze);sv('bScorer',d.bonus.scorer);sv('bAssist',d.bonus.assist);sv('bBall',d.bonus.ball);}
+  document.getElementById('preloadBox').style.display='block';
+  document.getElementById('preloadMsg').textContent='Tips från '+d.name+' er inläst. Klicka nedan för att öppna eller redigera det.';
+});
+
+function loadSaved(){
+  ensureGroupState();
+  document.getElementById('page-start').classList.remove('active');
+  document.getElementById('tabBar').style.display='flex';
+  document.getElementById('hsc').style.display='block';
+  if(S.thirds.length===8){unlockTab('thirds');unlockTab('bracket');}
+  else unlockTab('thirds');
+  buildGroups();showPage(S.thirds.length===8?'bracket':'groups');updateScore();
+}
+
+function ensureGroupState(){
+  GROUPS.forEach(g=>{
+    if(!S.groups[g.name])S.groups[g.name]={picks:Array(6).fill(null),double:null,order:[...g.teams]};
+    if(!S.groups[g.name].order)S.groups[g.name].order=[...g.teams];
+  });
+  if(!S.bracket)S.bracket={r32:Array(16).fill(null),r16:Array(8).fill(null),qf:Array(4).fill(null),sf:Array(2).fill(null)};
+}
+
+function startTipping(){
+  const n=document.getElementById('pName').value.trim();
+  if(!n){toast('Ange ditt namn först!');return;}
+  S.name=n;
+  ensureGroupState();
+  document.getElementById('page-start').classList.remove('active');
+  document.getElementById('tabBar').style.display='flex';
+  document.getElementById('hsc').style.display='block';
+  buildGroups();showPage('groups');
+}
+
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.page===name));
+  if(name==='summary')buildSummary();
+  if(name==='bracket')buildBracket();
+}
+function navTab(name,el){
+  if(el.classList.contains('locked')){toast('Fyll i gruppspelet och välj grupp-3:or först!');return;}
+  showPage(name);
+}
+function unlockTab(name){document.querySelectorAll('.tab').forEach(t=>{if(t.dataset.page===name)t.classList.remove('locked');});}
+
+// Standings
+function computeStandings(gn){
+  const g=GROUPS.find(x=>x.name===gn),gs=S.groups[gn];
+  const order=gs?.order||g.teams;
+  const tbl={};
+  order.forEach(t=>{tbl[t]={t,pts:0,played:0};});
+  g.matches.forEach((m,i)=>{
+    const p=gs?.picks[i];if(!p)return;
+    tbl[m.h].played++;tbl[m.a].played++;
+    if(p==='1')tbl[m.h].pts+=3;
+    else if(p==='X'){tbl[m.h].pts+=1;tbl[m.a].pts+=1;}
+    else tbl[m.a].pts+=3;
+  });
+  const rows=order.map(t=>tbl[t]||{t,pts:0,played:0});
+  rows.sort((a,b)=>b.pts-a.pts||(order.indexOf(a.t)-order.indexOf(b.t)));
+  return rows;
+}
+function hasTie(st){for(let i=0;i<st.length-1;i++)if(st[i].pts===st[i+1].pts)return true;return false;}
+const getW=gn=>computeStandings(gn)[0].t;
+const getR=gn=>computeStandings(gn)[1].t;
+const getT=gn=>computeStandings(gn)[2].t;
+
+// Build groups
+function buildGroups(){
+  const grid=document.getElementById('groupGrid');grid.innerHTML='';
+  GROUPS.forEach(g=>{const card=document.createElement('div');card.className='gc';card.id='gc-'+g.name;grid.appendChild(card);renderGroup(g.name);});
+  updateGProg();
+}
+function renderGroup(gn){
+  const g=GROUPS.find(x=>x.name===gn),gs=S.groups[gn];
+  if(!gs)return;
+  const st=computeStandings(gn),tie=hasTie(st);
+  let h=`<div class="gh"><span class="gn">GRUPP ${gn}</span><span class="dbl ${gs.double!==null?'used':''}" onclick="activateDbl('${gn}')">${gs.double!==null?'2× Använd':'2× Dubbelchans'}</span></div>`;
+  g.matches.forEach((m,i)=>{
+    const p=gs.picks[i],isDbl=gs.double===i;
+    h+=`<div class="mr"><span class="mn">${m.h}<br>${m.a}</span>
+      <button class="ob ${p==='1'?(isDbl?'dbl2':'sel'):''}" onclick="pickM('${gn}',${i},'1')">${m.o1}</button>
+      <button class="ob ${p==='X'?(isDbl?'dbl2':'sel'):''}" onclick="pickM('${gn}',${i},'X')">${m.oX}</button>
+      <button class="ob ${p==='2'?(isDbl?'dbl2':'sel'):''}" onclick="pickM('${gn}',${i},'2')">${m.o2}</button></div>`;
+  });
+  h+=`<div class="shdr"><span>#</span><span>Lag${tie?' <small style="color:var(--gold);font-size:.58rem"> ↕ dra vid lika</small>':''}</span><span class="cr">Sp</span><span class="cr">Pts</span></div>`;
+  const card=document.getElementById('gc-'+gn);card.innerHTML=h;
+  const pcls=['w','r','t','f'];
+  st.forEach((row,i)=>{
+    const div=document.createElement('div');
+    div.className=`srow p${i+1}${tie?' draggable':''}`;
+    div.draggable=tie;div.dataset.team=row.t;div.dataset.group=gn;
+    div.innerHTML=`<div class="pb ${pcls[i]}">${i+1}</div><span style="font-size:.77rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${row.t}</span><span class="cr" style="font-size:.71rem;color:var(--muted)">${row.played}</span><span class="cr" style="font-size:.71rem;font-weight:600">${row.pts}</span>`;
+    if(tie){div.addEventListener('dragstart',dragStart);div.addEventListener('dragover',dragOver);div.addEventListener('drop',dragDrop);div.addEventListener('dragleave',dragLeave);}
+    card.appendChild(div);
+  });
+}
+let dragSrc=null;
+function dragStart(e){dragSrc=this;this.classList.add('dragging');e.dataTransfer.effectAllowed='move';}
+function dragOver(e){e.preventDefault();this.classList.add('drag-over');return false;}
+function dragLeave(){this.classList.remove('drag-over');}
+function dragDrop(e){
+  e.stopPropagation();this.classList.remove('drag-over');
+  if(dragSrc===this)return;
+  const gn=this.dataset.group,gs=S.groups[gn];
+  const st=computeStandings(gn),order=st.map(r=>r.t);
+  const fi=order.indexOf(dragSrc.dataset.team),ti=order.indexOf(this.dataset.team);
+  if(fi<0||ti<0)return;
+  order.splice(fi,1);order.splice(ti,0,dragSrc.dataset.team);
+  gs.order=order;dragSrc.classList.remove('dragging');
+  renderGroup(gn);updateScore();
+}
+function activateDbl(gn){
+  const gs=S.groups[gn];
+  if(gs.double!==null){gs.double=null;dblPending=null;renderGroup(gn);updateScore();return;}
+  dblPending=gn;toast('Klicka på en match i grupp '+gn+' för att sätta dubbelchans');
+}
+function pickM(gn,i,outcome){
+  const gs=S.groups[gn];
+  if(dblPending===gn){gs.picks[i]=outcome;gs.double=i;dblPending=null;}
+  else gs.picks[i]=outcome;
+  renderGroup(gn);updateScore();updateGProg();
+}
+function updateGProg(){
+  let tot=0,done=0;
+  GROUPS.forEach(g=>g.matches.forEach((_,i)=>{tot++;if(S.groups[g.name]?.picks[i])done++;}));
+  document.getElementById('gProg').textContent=done+' / '+tot+' matchat';
+}
+
+// Thirds
+function goToThirds(){buildThirds();unlockTab('thirds');showPage('thirds');}
+function buildThirds(){
+  const grid=document.getElementById('thirdGrid');grid.innerHTML='';
+  GROUPS.forEach(g=>{
+    const st=computeStandings(g.name),t=st[2],sel=S.thirds.includes(g.name);
+    const card=document.createElement('div');card.className='tc'+(sel?' sel':'');card.id='tc-'+g.name;card.onclick=()=>toggleThird(g.name);
+    card.innerHTML=`<span class="tcg">${g.name}</span><div><div class="tct">${t.t}</div><div class="tcn">${t.pts} poäng</div></div>`;
+    grid.appendChild(card);
+  });
+  document.getElementById('tcNum').textContent=S.thirds.length;
+}
+function toggleThird(g){
+  const idx=S.thirds.indexOf(g);
+  if(idx>=0)S.thirds.splice(idx,1);
+  else{if(S.thirds.length>=8){toast('Redan 8 valda!');return;}S.thirds.push(g);}
+  GROUPS.forEach(gr=>{const c=document.getElementById('tc-'+gr.name);if(c)c.className='tc'+(S.thirds.includes(gr.name)?' sel':'');});
+  document.getElementById('tcNum').textContent=S.thirds.length;updateScore();
+}
+function goToBracket(){
+  if(S.thirds.length!==8){toast('Välj exakt 8 grupp-3:or!');return;}
+  unlockTab('bracket');buildBracket();showPage('bracket');
+}
+
+// Bracket
+function assignThirds(){
+  thirdAssign={};const used=new Set();
+  R32.forEach((m,mi)=>{
+    [{slot:m.a,side:0},{slot:m.b,side:1}].forEach(({slot,side})=>{
+      if(slot.t!=='3')return;
+      const match=slot.gs.find(g=>S.thirds.includes(g)&&!used.has(g));
+      const key=mi+'-'+side;
+      if(match){used.add(match);thirdAssign[key]=getT(match);}
+      else{const fb=S.thirds.find(g=>!used.has(g));if(fb){used.add(fb);thirdAssign[key]=getT(fb);}else thirdAssign[key]='?';}
+    });
+  });
+}
+function resolveSlot(slot,mi,side){
+  if(slot.t==='w')return getW(slot.g);
+  if(slot.t==='r')return getR(slot.g);
+  if(slot.t==='3')return thirdAssign[mi+'-'+side]||'?';
+  return '?';
+}
+function getR32M(){return R32.map((m,i)=>({a:resolveSlot(m.a,i,0),b:resolveSlot(m.b,i,1)}));}
+function getRoundM(key){
+  const pk={r16:'r32',qf:'r16',sf:'qf'}[key];
+  const pm=pk==='r32'?getR32M():getRoundM(pk);
+  const cnt={r16:8,qf:4,sf:2}[key];const out=[];
+  for(let i=0;i<cnt;i++){
+    const m1=pm[i*2],m2=pm[i*2+1];
+    const p1=S.bracket[pk][i*2],p2=S.bracket[pk][i*2+1];
+    out.push({a:p1?(p1==='a'?m1.a:m1.b):'?',b:p2?(p2==='a'?m2.a:m2.b):'?'});
+  }
+  return out;
+}
+function buildBracket(){
+  assignThirds();
+  const container=document.getElementById('bracketContent');container.innerHTML='';
+  const rounds=[
+    {title:'16-delsfinal',key:'r32',matches:getR32M(),pts:12},
+    {title:'Åttondelsfinal',key:'r16',matches:getRoundM('r16'),pts:24},
+    {title:'Kvartsfinal',key:'qf',matches:getRoundM('qf'),pts:36},
+    {title:'Semifinal',key:'sf',matches:getRoundM('sf'),pts:60},
+  ];
+  rounds.forEach(round=>{
+    const div=document.createElement('div');div.className='brd';
+    div.innerHTML=`<div class="st">${round.title} <span style="font-size:.78rem;font-weight:400;color:var(--muted);font-family:'DM Sans',sans-serif">— ${round.pts} p per lag</span></div>`;
+    const grid=document.createElement('div');grid.className='bgrid';
+    round.matches.forEach((match,mi)=>{
+      const pA=S.bracket[round.key][mi]==='a',pB=S.bracket[round.key][mi]==='b';
+      const card=document.createElement('div');card.className='mc';
+      card.innerHTML=`<div class="mch">Match ${mi+1}</div>
+        <div class="mct"><span class="tnm">${match.a}</span><button class="pkb ${pA?'sel':''}" onclick="pickBracket('${round.key}',${mi},'a')">Går vidare</button></div>
+        <div class="mct"><span class="tnm">${match.b}</span><button class="pkb ${pB?'sel':''}" onclick="pickBracket('${round.key}',${mi},'b')">Går vidare</button></div>`;
+      grid.appendChild(card);
+    });
+    div.appendChild(grid);container.appendChild(div);
+  });
+  const note=document.createElement('div');
+  note.style.cssText='background:#fff;border-radius:12px;padding:.85rem 1.25rem;box-shadow:var(--shadow);font-size:.83rem;color:var(--muted);margin-top:.5rem;';
+  note.innerHTML='<strong style="color:var(--text)">Obs:</strong> Finalen tippas inte här — inga poäng för lag i final. Tippa VM-vinnaren under <strong>Bonus</strong> istället.';
+  container.appendChild(note);
+}
+function pickBracket(key,mi,side){S.bracket[key][mi]=side;buildBracket();updateScore();}
+
+// Score
+function updateScore(){
+  let score=0;
+  GROUPS.forEach(g=>{
+    const gs=S.groups[g.name];
+    g.matches.forEach((m,i)=>{
+      const p=gs?.picks[i];if(!p)return;
+      let pts=p==='1'?m.o1:p==='X'?m.oX:m.o2;
+      if(gs.double===i)pts*=2;score+=pts;
+    });
+  });
+  score+=24*12;S.thirds.forEach(()=>score+=12);
+  const rp={r32:12,r16:24,qf:36,sf:60};
+  Object.entries(S.bracket).forEach(([k,picks])=>picks.forEach(p=>{if(p)score+=rp[k];}));
+  const bp=[100,80,50,80,80,80];
+  ['bWinner','bSilver','bBronze','bScorer','bAssist','bBall'].forEach((id,i)=>{if(gv(id))score+=bp[i];});
+  document.getElementById('hsc').textContent=score.toLocaleString('sv')+' P';
+  return score;
+}
+
+// Summary
+function buildSummary(){
+  document.getElementById('smName').textContent=S.name||'—';
+  let total=0;
+  let gh='<div class="smsh"><span>Gruppspel</span><span>Poäng</span></div>';
+  GROUPS.forEach(g=>{
+    const gs=S.groups[g.name];
+    g.matches.forEach((m,i)=>{
+      const p=gs?.picks[i];if(!p)return;
+      let pts=p==='1'?m.o1:p==='X'?m.oX:m.o2;
+      const isDbl=gs.double===i;if(isDbl)pts*=2;total+=pts;
+      gh+=`<div class="smr"><span style="color:var(--muted);font-size:.74rem">${m.h} – ${m.a}</span><span style="display:flex;align-items:center;gap:.3rem"><span style="font-size:.77rem">${p==='1'?m.h:p==='X'?'Oavgjort':m.a}${isDbl?' ×2':''}</span><span class="smp">${pts}</span></span></div>`;
+    });
+  });
+  document.getElementById('smGroups').innerHTML=gh;
+  let kh='<div class="smsh"><span>Slutspel</span><span>Poäng</span></div>';
+  const base=24*12;total+=base;
+  kh+=`<div class="smr"><span style="color:var(--muted);font-size:.74rem">24 gruppettor &amp; -tvåor i 16-del</span><span class="smp">${base}</span></div>`;
+  S.thirds.forEach(g=>{total+=12;kh+=`<div class="smr"><span style="color:var(--muted);font-size:.74rem">${getT(g)} (Grupp ${g}) i 16-del</span><span class="smp">12</span></div>`;});
+  const rp={r32:12,r16:24,qf:36,sf:60},rl={r32:'16-delsfinal',r16:'Åttondelsfinal',qf:'Kvartsfinal',sf:'Semifinal'};
+  const r32m=getR32M();
+  Object.entries(S.bracket).forEach(([k,picks])=>{
+    const ms=k==='r32'?r32m:getRoundM(k);
+    picks.forEach((p,i)=>{
+      if(!p)return;const m=ms[i];const w=p==='a'?m?.a:m?.b;total+=rp[k];
+      kh+=`<div class="smr"><span style="color:var(--muted);font-size:.74rem">${w} i ${rl[k]}</span><span class="smp">${rp[k]}</span></div>`;
+    });
+  });
+  document.getElementById('smKO').innerHTML=kh;
+  let bh='<div class="smsh"><span>Bonus</span><span>Poäng</span></div>';
+  [{id:'bWinner',l:'VM-vinnare',p:100},{id:'bSilver',l:'Silver',p:80},{id:'bBronze',l:'Brons',p:50},{id:'bScorer',l:'Skyttekung',p:80},{id:'bAssist',l:'Assistkung',p:80},{id:'bBall',l:'Golden Ball',p:80}].forEach(f=>{
+    const v=gv(f.id);if(!v)return;total+=f.p;
+    bh+=`<div class="smr"><span style="color:var(--muted);font-size:.74rem">${f.l}</span><span style="display:flex;align-items:center;gap:.3rem"><span style="font-size:.77rem">${v}</span><span class="smp">${f.p}</span></span></div>`;
+  });
+  document.getElementById('smBonus').innerHTML=bh;
+  document.getElementById('smTotal').textContent=total.toLocaleString('sv');
+  document.getElementById('smProg').style.width=Math.min(100,Math.round(total/150))+'%';
+  document.getElementById('smProgLbl').textContent=total.toLocaleString('sv')+' poäng tippade';
+}
+
+// Share / Submit
+async function copyLink(){
+  try{await navigator.clipboard.writeText(getShareURL());document.getElementById('shareNote').style.display='block';toast('Länk kopierad!');}
+  catch(e){toast('Kopiera URL:en manuellt från adressfältet');}
+}
+async function submitTips(){
+  await saveTips();
+  const url=getShareURL();
+  const sub=encodeURIComponent('VM-tips 2026 — '+S.name);
+  const body=encodeURIComponent('Hej Axel!\n\nHär är mitt VM-tips:\n\n'+url+'\n\nÖppna länken för att se hela tipset.\n\n/ '+S.name);
+  window.open('mailto:axelandersson08@hotmail.com?subject='+sub+'&body='+body,'_blank');
+  document.getElementById('shareNote').style.display='block';
+  toast('Tips sparat! E-postklient öppnas...');
+}
+
+// Admin
+async function loadAdmin(){
+  if(document.getElementById('adminPw').value!==ADMIN_PW){toast('Fel lösenord!');return;}
+  const container=document.getElementById('adminContent');
+  container.innerHTML='<div style="color:var(--muted);font-size:.85rem;padding:1rem 0">Laddar...</div>';
+  const all=await loadAllTips();
+  if(!all.length){container.innerHTML='<div class="card" style="color:var(--muted);font-size:.87rem">Inga inlämnade tips ännu.</div>';return;}
+  all.sort((a,b)=>(b.ts||0)-(a.ts||0));
+  container.innerHTML='';
+  all.forEach((tip,idx)=>{
+    const card=document.createElement('div');card.className='admin-card';
+    const ts=tip.ts?new Date(tip.ts).toLocaleString('sv'):'';
+    const url=location.href.split('?')[0]+'?tips='+encState2(tip);
+    card.innerHTML=`<div class="admin-hdr">
+      <span class="admin-nm">${tip.name||'Okänd'}</span>
+      <span class="admin-ts">${ts}</span>
+      <button class="admin-tog" onclick="this.closest('.admin-card').querySelector('.admin-body').classList.toggle('open')">Visa ▾</button>
+    </div>
+    <div class="admin-body">
+      <a href="${url}" target="_blank" style="color:var(--green);font-weight:500">Öppna tips i ny flik →</a><br>
+      <span style="font-size:.75rem;color:var(--muted);margin-top:.35rem;display:block">Inlämnat ${ts}</span>
+    </div>`;
+    container.appendChild(card);
+  });
+}
+function encState2(tip){try{return btoa(unescape(encodeURIComponent(JSON.stringify(tip))));}catch(e){return '';}}
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+</script>
+</body>
+</html>
